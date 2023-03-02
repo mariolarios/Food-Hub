@@ -1,7 +1,6 @@
 {
   "name": "06-jobs-api",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
@@ -33,5 +32,7 @@
   },
   "engines": {
     "node": "14.x"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
