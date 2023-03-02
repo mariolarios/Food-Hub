@@ -1,0 +1,35 @@
+[
+  {
+    "tax": 399,
+    "shippingFee": 699,
+    "items": [
+      {
+        "name": "pepperoni pizza",
+        "price": 999,
+        "image": "/uploads/example.jpeg",
+        "amount": 4,
+        "meal": "6126ad3424d2bd09165a68c8"
+      }
+    ]
+  },
+  {
+    "tax": 399,
+    "shippingFee": 699,
+    "items": [
+      {
+        "name": "tacos",
+        "price": 799,
+        "image": "/uploads/example.jpeg",
+        "amount": 3,
+        "meal": "6126ad3424d2bd09165a68c7"
+      },
+      {
+        "name": "cheese burger",
+        "price": 1099,
+        "image": "/uploads/example.jpeg",
+        "amount": 1,
+        "meal": "6126ad3424d2bd09165a68c4"
+      }
+    ]
+  }
+]

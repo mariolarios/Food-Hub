@@ -1,0 +1,34 @@
+[
+  {
+    "name": "pepperoni pizza",
+    "price": 10,
+    "image": "/uploads/example.jpeg",
+    "restaurant": "dominoes",
+    "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
+    "category": "pizza"
+  },
+  {
+    "name": "cheese burger",
+    "price": 15,
+    "image": "/uploads/example.jpeg",
+    "restaurant": "burger king",
+    "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
+    "category": "burgers"
+  },
+  {
+    "name": "chicken tacos",
+    "price": 17,
+    "image": "/uploads/example.jpeg",
+    "restaurant": "taco bell",
+    "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
+    "category": "tacos"
+  },
+  {
+    "name": "french fries",
+    "price": 4,
+    "image": "/uploads/example.jpeg",
+    "restaurant": "burger king",
+    "description": "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
+    "category": "burgers"
+  }
+]
