@@ -7,7 +7,7 @@ const express = require("express");
 const app = express();
 
 ///Rest of the packages
-
+const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const fileUpload = require("express-fileupload");
 const rateLimiter = require("express-rate-limit");
