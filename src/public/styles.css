@@ -1,0 +1,148 @@
+/* Set the background color to a light gray */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Verdana", sans-serif;
+  background-color: #f2f2f258;
+}
+
+/* Set the font to Roboto Mono and increase the overall font size by 3 points */
+html,
+body {
+  font-family: "Verdana", monospace;
+  font-size: 22px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Center the main content area */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #60bf6c;
+}
+
+/*log on background*/
+#logon-div {
+  background-color: rgb(224, 224, 224);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 1rem;
+  padding-bottom: 30px;
+}
+
+button {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* logoff buttons */
+#logoff,
+input[type="submit"],
+button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 18px;
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #444;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Make the logoff button a different color */
+#logoff {
+  background-color: #ea4335;
+}
+
+/* Style the forms */
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+table {
+  border-spacing: 25px;
+}
+
+th {
+  text-align: left;
+}
+
+#song-table {
+  margin-left: 10px;
+}
+
+/* Add some space between form elements */
+form > * {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+#email {
+  margin-left: 45px;
+}
+
+input[type="submit"],
+button[type="submit"] {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffffb9;
+  background-color: #444;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
