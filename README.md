@@ -3,7 +3,7 @@
 Food-Hub serves as an integrated platform, optimizing food service operations through advanced digital solutions. It encompasses robust user authentication mechanisms, systematic meal and order management modules, and an interactive review aggregation system. By leveraging real-time data processing, personalized user functionalities, and a centralized database, Food-Hub enhances operational efficiency, user engagement, and data-driven decision-making in the food service ecosystem.
 
 ## Documentation
-Documentaion can be found at: https://food-hub-docs.onrender.com/
+API Documentaion can be found at: https://food-hub-docs.onrender.com/
 
 ## Features
 
