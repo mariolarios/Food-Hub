@@ -10,7 +10,6 @@ const {
   deleteReview,
 } = require("../controllers/reviewController");
 
-
 router.route("/").post(authenticateUser, createReview).get(getAllReviews);
 
 router
@@ -18,6 +17,5 @@ router
   .get(getSingleReview)
   .patch(authenticateUser, updateReview)
   .delete(authenticateUser, deleteReview);
-
 
 module.exports = router;

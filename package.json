@@ -1,10 +1,11 @@
 {
-  "name": "06-jobs-api",
+  "name": "food-hub-api",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -29,7 +30,7 @@
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.9"
+    "nodemon": "^2.0.22"
   },
   "engines": {
     "node": "14.x"

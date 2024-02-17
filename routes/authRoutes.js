@@ -4,7 +4,11 @@ const express = require("express");
 const router = express.Router(); // Create a new Express router to handle authentication routes
 
 // Import authentication controller functions
-const { register, login, logout } = require("../controllers/authController");
+const {
+  register,
+  login,
+  logout,
+} = require("../controllers/authController");
 
 // Route for user registration. Utilizes the 'register' controller function
 // to create a new user in the system.
