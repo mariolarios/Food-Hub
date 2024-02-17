@@ -1,18 +1,27 @@
-const Order = require("../models/Order");
-const Meal = require("../models/Meal");
+// orderController.js: Manages order-related operations including creation, retrieval, and update of orders.
 
-const { StatusCodes } = require("http-status-codes");
-const CustomError = require("../errors");
-const { checkPermissions } = require("../utils");
-////fake stripe
+const Order = require("../models/Order"); // Importing the Order model.
+const Meal = require("../models/Meal"); // Importing the Meal model for order item references.
+
+const { StatusCodes } = require("http-status-codes"); // HTTP status codes for standardized responses.
+const CustomError = require("../errors"); // Custom error handling utilities.
+const { checkPermissions } = require("../utils"); // Utility function for permission checking.
+
+// Simulated Stripe API for demonstration purposes. In a production environment, you would replace this
+// with real payment processing logic.
 const fakeStripeAPI = async ({ amount, currency }) => {
   const client_secret = "RandomSecret";
   return { client_secret, amount };
 };
 
+/**
+ * Creates a new order with the items specified in the request body, calculates the total cost,
+ * and simulates a payment intent creation using a fake Stripe API.
+ */
 const createOrder = async (req, res) => {
-  const { items: cartItems, tax, shippingFee } = req.body;
+  const { items: cartItems, tax, shippingFee } = req.body; // Destructuring the order details from the request body.
 
+  // Validate the order details.
   if (!cartItems || cartItems.length < 1) {
     throw new CustomError.BadRequestError("There are no items in the cart");
   }
@@ -22,9 +31,9 @@ const createOrder = async (req, res) => {
     );
   }
 
+  // Process each item in the order.
   let orderItems = [];
   let subtotal = 0;
-
   for (const item of cartItems) {
     const dbMeal = await Meal.findOne({ _id: item.meal });
     if (!dbMeal) {
@@ -38,19 +47,18 @@ const createOrder = async (req, res) => {
       image,
       product: _id,
     };
-    /// this is where the item is added to the order
-    orderItems = [...orderItems, singleOrderItem];
-    // this is where the subtotal is calculated
+    orderItems.push(singleOrderItem);
     subtotal += item.amount * price;
   }
-  /// calc total
+
+  // Calculate the total cost and simulate payment intent.
   const total = tax + shippingFee + subtotal;
-  /// get client secret
   const paymentIntent = await fakeStripeAPI({
     amount: total,
     currency: "usd",
   });
 
+  // Create the order in the database.
   const order = await Order.create({
     orderItems,
     total,
@@ -65,30 +73,39 @@ const createOrder = async (req, res) => {
     .status(StatusCodes.CREATED)
     .json({ order, clientSecret: order.clientSecret });
 };
-//////////
 
+/**
+ * Retrieves all orders from the database.
+ */
 const getAllOrders = async (req, res) => {
   const orders = await Order.find({});
   res.status(StatusCodes.OK).json({ orders, count: orders.length });
 };
-//////////
+
+/**
+ * Retrieves a single order by its ID, provided in the request parameters.
+ */
 const getSingleOrder = async (req, res) => {
   const { id: orderId } = req.params;
   const order = await Order.findOne({ _id: orderId });
   if (!order) {
     throw new CustomError.NotFoundError(`No order with id : ${orderId}`);
   }
-  checkPermissions(req.user, order.user);
+  checkPermissions(req.user, order.user); // Check if the user has permission to view this order.
   res.status(StatusCodes.OK).json({ order });
 };
-//////////
 
+/**
+ * Retrieves all orders placed by the currently authenticated user.
+ */
 const getCurrentUserOrders = async (req, res) => {
   const orders = await Order.find({ user: req.user.userId });
   res.status(StatusCodes.OK).json({ orders, count: orders.length });
 };
-//////////
 
+/**
+ * Updates the status of an order to 'paid' once the payment is completed.
+ */
 const updateOrder = async (req, res) => {
   const { id: orderId } = req.params;
   const { paymentIntentId } = req.body;
@@ -97,8 +114,9 @@ const updateOrder = async (req, res) => {
   if (!order) {
     throw new CustomError.NotFoundError(`No order with id : ${orderId}`);
   }
-  checkPermissions(req.user, order.user);
+  checkPermissions(req.user, order.user); // Verify user permission to update the order.
 
+  // Update the order status.
   order.paymentIntentId = paymentIntentId;
   order.status = "paid";
   await order.save();
@@ -106,6 +124,7 @@ const updateOrder = async (req, res) => {
   res.status(StatusCodes.OK).json({ order });
 };
 
+// Exporting controller functions to be used in route definitions.
 module.exports = {
   getAllOrders,
   getSingleOrder,
@@ -113,4 +132,3 @@ module.exports = {
   createOrder,
   updateOrder,
 };
-
