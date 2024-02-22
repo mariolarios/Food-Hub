@@ -59,7 +59,7 @@ API Documentation can be found at: https://food-hub-docs.onrender.com/
 
 ```bash
 # Clone the repository
-git clone https://github.com/mariolarios/the-new-food-hub.git
+git clone https://github.com/mariolarios/food-hub.git
 
 
 ## Setup
